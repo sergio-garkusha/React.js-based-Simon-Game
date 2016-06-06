@@ -39,8 +39,8 @@ class App extends React.Component {
     this.tone2 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3')
     this.tone3 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3')
     this.tone4 = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
-    this.trumpet = new Audio('./assets/sounds/trumpet.mp3')
-    this.buzz = new Audio('./assets/sounds/buzz.mp3')
+    this.buzz  = new Audio('https://cdn.rawgit.com/Cu7ious/React.js-based-Simon-Game/master/assets/sounds/buzz.mp3')
+    this.trumpet = new Audio('https://cdn.rawgit.com/Cu7ious/React.js-based-Simon-Game/master/assets/sounds/trumpet.mp3')
 
     this.startSimon = this.startSimon.bind(this)
     this.setStepsQty = this.setStepsQty.bind(this)
