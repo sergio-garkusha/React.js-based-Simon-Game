@@ -1,0 +1,360 @@
+/* General */
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #2c3643;
+}
+:focus {
+  outline: 0;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 25px auto 0;
+  padding: 0 40px;
+}
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #ededed;
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.3) inset;
+}
+
+/* Header */
+header {
+  overflow: hidden;
+  text-align: center;
+  background-color: #ebebeb;
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.3) inset;
+}
+header h1 {
+  width: 300px;
+  margin: 25px auto;
+}
+header h1 i {
+  font-family: serif;
+  color: #A2A2A2;
+}
+header h1 span {
+  text-transform: uppercase;
+  color: #575757;
+  font-size: 24px;
+  letter-spacing: 3px;
+  text-indent: 10px;
+  font-family: monospace;
+}
+.github-badge {
+  width: 50px;
+  position: absolute;
+  right: 40px;
+  top: 37px;
+}
+
+/* Footer */
+footer {
+  margin-top: 25px;
+}
+footer p {
+  color: #A2A2A2;
+  text-align: center;
+  font-family: monospace;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity .5s linear;
+}
+footer a:hover {
+  opacity: 1;
+}
+
+.playground {
+  width: 500px;
+  height: 500px;
+  padding: 30px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 500px;
+  background-color: #EBEBEB;
+  box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.3) inset;
+}
+.playground sup {
+  font-size: 18px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+.row li {
+  flex: 1;
+  border: 18px solid #EBEBEB;
+  box-sizing: border-box;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  transition: opacity .05s linear;
+}
+#cell-1 {
+  border-top: 0;
+  border-left: 0;
+  background-color: #2B8C45;
+  border-radius: 250px 0 0 0;
+}
+#cell-2 {
+  border-top: 0;
+  border-right: 0;
+  background-color: #B9352A;
+  border-radius: 0 250px 0 0;
+}
+#cell-3 {
+  border-left: 0;
+  border-bottom: 0;
+  background-color: #E2A904;
+  border-radius: 0 0 0 250px;
+}
+#cell-4 {
+  border-right: 0;
+  border-bottom: 0;
+  background-color: #3265B9;
+  border-radius: 0 0 250px 0;
+}
+#cell-1:active:not(.blocked),
+#cell-1.on.blocked,
+#cell-1.on,
+#cell-2:active:not(.blocked),
+#cell-2.on.blocked,
+#cell-2.on,
+#cell-3:active:not(.blocked),
+#cell-3.on.blocked,
+#cell-3.on,
+#cell-4:active:not(.blocked),
+#cell-4.on.blocked,
+#cell-4.on {
+  background-color: #000;
+}
+
+#cell-1.blocked,
+#cell-1.off.blocked,
+#cell-2.blocked,
+#cell-2.off.blocked,
+#cell-3.blocked,
+#cell-3.off.blocked,
+#cell-4.blocked,
+#cell-4.off.blocked {
+  cursor: inherit;
+}
+
+.controls {
+  margin: -150px 0 0 80px;
+  border-radius: 300px;
+  background: #EBEBEB;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50px;
+}
+.controls h3 {
+  color: #575757;
+  text-align: center;
+  font: 64px monospace;
+  margin-bottom: 0;
+}
+.controls-row {
+  font: 12px sans-serif;
+  width: 70%;
+  margin: 10px auto 0;
+  text-align: center;
+}
+.controls-row li {
+  color: #575757;
+  flex: 1;
+  position: relative;
+  text-transform: uppercase;
+}
+#display {
+  background-color: #32050C;
+  display: block;
+  width: 65px;
+  color: #DC0D29;
+  height: 44px;
+  font: 30px monospace;
+  line-height: 43px;
+  border-radius: 4px;
+}
+.blink #display {
+  animation: blink-screen 1s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+button {
+  cursor: pointer;
+}
+#start {
+  background-color: #F00;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 4px solid #4D4D4D;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 14px;
+}
+#strict {
+  background-color: #FBBC05;
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: 4px solid #4D4D4D;
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+  margin-top: 14px;
+}
+#strict-light {
+  background-color: #4D4D4D;
+  width: 5px;
+  left: 29px;
+  top: -15px;
+  position: absolute;
+  height: 5px;
+  border-radius: 10px;
+  border: 3px solid #4D4D4D;
+  margin-top: 14px;
+}
+.on #strict-light {
+  background-color: #DC0D29;
+}
+.on #strict,
+.on #start,
+#start:active,
+#strict:active {
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2) inset;
+}
+.sec-block {
+  color: #575757;
+  font: 12px sans-serif;
+  width: 70%;
+  margin: 20px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.sec-block span {
+  background-color: #4D4D4D;
+  height: 20px;
+  width: 40px;
+  display: inline-block;
+  margin: -2px 9px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.sec-block span i {
+  display: block;
+  width: 19px;
+  height: 16px;
+  margin: 2px;
+  border-radius: 2px;
+  background-color: #4285F4;
+  transition: margin .2s linear;
+}
+.sec-block span.on i {
+  margin-left: 19px;
+}
+
+.game-settings {
+  position: absolute;
+  top: 0;
+  right: -150px;
+  color: #fff;
+  font: 14px monospace;
+}
+.game-settings ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.game-settings input {
+  max-width: 90px;
+  margin: 0 0 0 5px;
+}
+.game-settings span {
+  cursor: pointer;
+}
+
+@keyframes blink-screen {
+  0%, 100% {color: #DC0D29;}
+  50% {color: #32050C;}
+}
+
+@media screen and (max-width: 801px) {
+  .wrapper {
+    max-width: 960px;
+    margin: 25px auto 0;
+    padding: 0 15px;
+  }
+  .playground {
+    width: 300px;
+    height: 300px;
+    margin-top: 200px;
+  }
+  .row li {
+    width: 150px;
+    height: 150px;
+  }
+  .controls {
+    width: 150px;
+    height: 150px;
+    margin: -74px 0 0 54px;
+  }
+  .controls h3 {
+    font-size: 34px;
+    margin-top: 23px;
+  }
+  #display {
+    width: 40px;
+    height: 25px;
+    font-size: 16px;
+    line-height: 27px;
+  }
+  #start {
+    height: 16px;
+    width: 15px;
+    margin-top: 6px;
+    border: 2px solid #4D4D4D;
+  }
+  #strict {
+    height: 16px;
+    width: 15px;
+    margin-top: 6px;
+    border: 2px solid #4D4D4D;
+  }
+  #strict-light {
+    height: 1px;
+    width: 1px;
+    left: 16px;
+    top: -15px;
+    border: 2px solid #4D4D4D;
+  }
+  .controls-row {
+    font: 8px sans-serif;
+    width: 77%;
+  }
+  .sec-block {
+    font: 8px sans-serif;
+    margin: 10px auto 0;
+  }
+  .sec-block span {
+    height: 11px;
+    width: 15px;
+    margin: -2px 5px;
+  }
+  .sec-block span i {
+    width: 8px;
+    height: 7px;
+    margin: 2px;
+  }
+  .sec-block span.on i {
+    margin-left: 5px;
+  }
+  .game-settings {
+    top: -155px;
+    right: 25%;
+  }
+}
