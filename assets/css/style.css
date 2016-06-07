@@ -292,7 +292,7 @@ button {
   .playground {
     width: 300px;
     height: 300px;
-    margin-top: 200px;
+    /*margin-top: 200px;*/
   }
   .row li {
     width: 150px;
@@ -354,7 +354,11 @@ button {
     margin-left: 5px;
   }
   .game-settings {
-    top: -155px;
+    top: initial;
     right: 25%;
+    bottom: -107px;
+  }
+  footer {
+    margin-top: 130px;
   }
 }
